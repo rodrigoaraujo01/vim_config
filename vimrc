@@ -11,6 +11,10 @@ set softtabstop=4               " the size of tabs when using insert mode
 set shiftwidth=4                " whenever using >> or << use this ammount of spaces
 set expandtab                   " replace tabs with the ammount of spaces defined in softtabstop
 
+"Code Folding
+set foldmethod=indent           " groups of lines with the same indent form a fold
+set foldlevel=99                " depths of folding to be displayed
+
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set number                      " display line numbers
@@ -23,7 +27,7 @@ set undofile
 
 let mapleader = ","             " set the <leader> key. Used to call user's defined commands
 
-"" Searching
+"Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
@@ -40,12 +44,16 @@ set wrap                      " wrap lines
 set textwidth=79              " lines will wrap after 79 characters
 set formatoptions=qnr1        " allows formating of comments with gq, detects numbered lists, automatically inserts the current comment char after pressing <Enter> and doesn't break lines after 1 char words
 set colorcolumn=85            " and a colored character is shown on the 85th position
-
-"" Visual
+"Visual
 colorscheme hemisu
-
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬   " modifying the display of tabs and leading spaces
+
+"Window Management
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 " Forcing VIM learning
 "nnoremap <up> <nop>
