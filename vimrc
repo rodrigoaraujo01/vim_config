@@ -55,6 +55,9 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+"Plugins
+map <leader>td <Plug>TaskList
+
 " Forcing VIM learning
 "nnoremap <up> <nop>
 "nnoremap <down> <nop>
