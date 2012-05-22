@@ -30,7 +30,7 @@ $ sudo pip install pep8
 
 ### [Snipmate][]
 
-TextMate snippet creation.
+TextMate-style snippets for Vim.
 This is a [custom branch][CustomSnipmate] to add new-style property to python snippets.
 
 ### [TaskList][]
