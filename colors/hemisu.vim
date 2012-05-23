@@ -34,7 +34,7 @@ let s:middleLightPink= { "gui": "#D65E76", "cterm": "167" }
 let s:lightPink=       { "gui": "#FFAFAF", "cterm": "217" }
 
 let s:darkBlue=        { "gui": "#005F87", "cterm": "17"  }
-let s:middleDarkBlue=  { "gui": "#538192", "cterm": "24"  }
+let s:middleDarkBlue=  { "gui": "#3197BD", "cterm": "24"  }
 let s:middleLightBlue= { "gui": "#9FD3E6", "cterm": "116" }
 let s:lightBlue=       { "gui": "#CBE4EE", "cterm": "195" }
 
@@ -42,6 +42,11 @@ let s:darkGreen=       { "gui": "#5F5F00", "cterm": "58"  }
 let s:middleDarkGreen= { "gui": "#739200", "cterm": "64"  }
 let s:middleLightGreen={ "gui": "#B1D631", "cterm": "149" }
 let s:lightGreen=      { "gui": "#BBFFAA", "cterm": "157" }
+
+let s:middleDarkPurple= { "gui": "#601AAB", "cterm": "50"  }
+let s:middleLightPurple={ "gui": "#8258E8", "cterm": "100" }
+
+let s:orange=          { "gui": "#E88E0C", "cterm": "100" }
 
 let s:darkTan=         { "gui": "#503D15", "cterm": "52"  }
 let s:lightTan=        { "gui": "#ECE1C8", "cterm": "230" }
@@ -62,6 +67,7 @@ if &background=="dark"
 	let s:normRed=s:middleLightPink
 	let s:normGreen=s:middleLightGreen
 	let s:normBlue=s:middleLightBlue
+    let s:normPurple=s:middleLightPurple
 	let s:faintRed=s:darkPink
 	let s:faintGreen=s:darkGreen
 	let s:faintBlue=s:darkBlue
@@ -73,13 +79,14 @@ else
 	let s:dimmed=s:middleDarkGrey
 	let s:subtle=s:lightGrey
 	let s:faint=s:almostWhite
-	let s:accent1=s:middleDarkBlue
+	let s:accent1=s:orange
 	let s:accent2=s:middleDarkGreen
 	let s:accent3=s:middleDarkPink
 	let s:accent4=s:darkTan
 	let s:normRed=s:middleDarkPink
 	let s:normGreen=s:middleDarkGreen
 	let s:normBlue=s:middleDarkBlue
+    let s:normPurple=s:middleDarkPurple
 	let s:faintRed=s:lightPink
 	let s:faintGreen=s:lightGreen
 	let s:faintBlue=s:lightBlue
@@ -165,8 +172,8 @@ call s:h("Underlined", { "fg": s:accent1, "gui": "underline", "cterm": "underlin
 call s:h("Type",       { "fg": s:accent3 })
 call s:h("String",     { "fg": s:accent2 })
 call s:h("Keyword",    { "fg": s:accent2, "gui": "bold", "cterm": "bold" })
-call s:h("Todo",       { "fg": s:normRed, "gui": "bold", "cterm": "bold" })
-call s:h("Function",   { "gui": "bold", "cterm": "bold" })
+call s:h("Todo",       { "fg": s:normPurple, "gui": "bold", "cterm": "bold" })
+call s:h("Function",   { "fg": s:normBlue, "gui": "bold", "cterm": "bold" })
 hi! link Identifier	Function
 hi! link Statement	Type
 hi! link Constant	Directory
