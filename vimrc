@@ -45,9 +45,12 @@ set textwidth=79              " lines will wrap after 79 characters
 set formatoptions=qnr1        " allows formating of comments with gq, detects numbered lists, automatically inserts the current comment char after pressing <Enter> and doesn't break lines after 1 char words
 set colorcolumn=85            " and a colored character is shown on the 85th position
 "Visual
-colorscheme hemisu
+colorscheme sublimetext2
 set list
-set listchars=tab:▸\ ,eol:¬   " modifying the display of tabs and leading spaces
+set listchars=tab:▸\ ,eol:¬ ,trail:·  " modifying the display of tabs and leading spaces
+set guioptions-=T             " remove gui buttons
+set guifont=Ubuntu\ Mono:h13
+set guioptions=aAce           " remove white scrollbar
 
 "Window Management
 map <c-j> <c-w>j
@@ -71,3 +74,15 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap ; :
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+let python_highlight_all = 1
+
